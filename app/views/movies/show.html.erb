@@ -1,0 +1,7 @@
+<h1>Movie Details</h1>
+
+<h2><%= @movie.title %></h2>
+<p>Overview: <%= @movie.overview%></p>
+<p>Release Date: <%= @movie.release_date %></p>
+<p>Ratings: <%= @movie.vote_average %></p>
+<p>Genre: <%= @movie.genres.pluck(:name).join(', ') %></p>

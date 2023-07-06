@@ -1,0 +1,15 @@
+<h1>Movie Database</h1>
+
+<form action="/movies/search" method="GET">
+  <label for="search">Search:</label>
+  <input type="text" id="search" name="search" placeholder="Enter title or genre">
+  <input type="submit" value="Search">
+</form>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, movie_path(movie) %>
+    </li>
+  <% end %>
+</ul>
