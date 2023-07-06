@@ -1,5 +1,11 @@
 <h1>Movie Search Result</h1>
 
+<form action="/movies/search" method="GET">
+  <label for="search">Search:</label>
+  <input type="text" id="search" name="search" placeholder="Enter title or genre">
+  <input type="submit" value="Search">
+</form>
+
 <ul>
   <% @movies.each do |movie| %>
     <li>
