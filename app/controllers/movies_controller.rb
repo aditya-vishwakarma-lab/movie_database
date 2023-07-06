@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
   # Performs a search query and renders the search results
   def search
     search_param = params[:search]
-    @movies = Movie.where("title LIKE ?", "%#{search_param}%")
+    @movies = Movie.joins(:genres).where("movies.title LIKE ? OR genres.name LIKE ?", "%#{search_param}%", "%#{search_param}%")
   end
 
   private
